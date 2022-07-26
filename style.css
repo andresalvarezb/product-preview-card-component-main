@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+:root {
+    --mobile: 360px;
+    --desktop: 900px;
+
+    /* Primary */
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+
+    /* ### Neutral */
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+
+    /* font */
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-fraunces: 'Fraunces', serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--Cream);
+}
+
+.wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--mobile);
+    border-radius: 10px;
+    background-color: var(--White);
+}
+
+.image {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.container__text {
+    padding: 2.5rem;
+
+}
+
+.container__product {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: gray;
+    font-family: var(--font-montserrat);
+}
+
+.container__title {
+    font-size: 3rem;
+    font-family: var(--font-fraunces);
+    color: var(--Very-dark-blue);
+}
+
+.container__description {
+    font-size: 1.4rem;
+    margin-block-end: 4rem;
+    line-height: 2;
+    font-family: var(--font-montserrat);
+    color: var(--Dark-grayish-blue);
+}
+
+.container__price {
+    font-size: 3rem;
+    display: inline-block;
+    color: var(--Dark-cyan);
+    font-family: var(--font-fraunces);
+}
+
+.container__price+span {
+    /* display: inline-block; */
+    margin-left: 2rem;
+    text-decoration: line-through;
+    font-size: small;
+    letter-spacing: normal;
+    color: gray;
+}
+
+.container__btn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 1rem;
+    border-color: transparent;
+    font-weight: 600;
+    padding-block: 1.2em;
+    margin-top: 1.2rem;
+    color: var(--White);
+    background-color: var(--Dark-cyan);
+}
+
+.container__btn:hover {
+    background-color: hsl(159, 37%, 18%);
+}
+
+.attribution {
+    font-size: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media all and (min-width: 900px) {
+    .container {
+        flex-direction: row;
+        max-width: 600px;
+    }
+
+    picture {
+        width: 50%;
+    }
+
+    .image {
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+        height: 100%;
+    }
+
+    .container__text {
+        width: 50%;
+    }
+}
